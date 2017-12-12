@@ -1,0 +1,71 @@
+{
+  "name": "babel-plugin-transform-polyfills",
+  "version": "0.0.0-development",
+  "description": "Babel plugin to replace occurrences of language features which might not be supported with polyfills",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skedify/babel-plugin-transform-polyfills.git"
+  },
+  "author": {
+    "name": "Skedify",
+    "email": "info@skedify.co",
+    "url": "https://www.skedify.me"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skedify/babel-plugin-transform-polyfills/issues"
+  },
+  "homepage": "https://github.com/skedify/babel-plugin-transform-polyfills",
+  "files": [
+    "lib",
+    "polyfills"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^5.2.5",
+    "@commitlint/config-conventional": "^5.2.3",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-preset-env": "^1.6.1",
+    "codecov": "^3.0.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^4.13.1",
+    "eslint-plugin-better": "^0.1.5",
+    "eslint-plugin-filenames": "^1.2.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-require-in-package": "^1.0.3",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "prettier": "^1.9.2",
+    "rimraf": "^2.6.2",
+    "semantic-release": "^8.2.0"
+  },
+  "scripts": {
+    "prebuild": "rimraf lib",
+    "build": "babel src -d lib",
+    "test": "NODE_ENV=test jest",
+    "tdd": "npm run test -- --watch",
+    "lint": "eslint --ext .js src",
+    "format": "npm run lint -- --fix",
+    "check-coverage": "CI=true NODE_ENV=test jest --coverage",
+    "publish-coverage": "codecov",
+    "precommit": "npm run lint",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "prepush": "npm test && npm run check-coverage",
+    "prepublish": "npm run build",
+    "postmerge": "npm install",
+    "postrewrite": "npm install",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "commit": "git-cz"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}
