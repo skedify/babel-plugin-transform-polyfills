@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Object.assign should not import polyfill more than once 1`] = `
+"import _Object_assign from \\"babel-plugin-transform-polyfills/polyfills/Object/assign\\";
+
+const e = _Object_assign({ a: 1 }, { b: _Object_assign({ c: 3 }, { d: 4 }) });"
+`;
+
+exports[`Object.assign should replace Object.assign with a polyfill 1`] = `
+"import _Object_assign from \\"babel-plugin-transform-polyfills/polyfills/Object/assign\\";
+
+const c = _Object_assign({ a: 1 }, { b: 2 });"
+`;
+
+exports[`Object.assign should work when part of a call chain 1`] = `
+"import _Object_assign from \\"babel-plugin-transform-polyfills/polyfills/Object/assign\\";
+
+const c = Object.keys(_Object_assign({ a: 1 }, { b: 2 }));"
+`;

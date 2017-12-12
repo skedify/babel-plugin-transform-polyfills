@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`babel-plugin-transform-polyfills should replace String.prototype.padStart with a polyfill 1`] = `
+"import _String_prototype_padStart from 'babel-plugin-transform-polyfills/polyfills/String/prototype/padStart';
+
+const text = 'this is a string';
+if (_String_prototype_padStart(text, 'a')) {
+  console.log('success');
+} else {
+  console.log('failure');
+}"
+`;
