@@ -10,6 +10,7 @@ node_js:
   - '6'
   - '4'
 after_success:
+  - npm run publish-coverage
   - npm run semantic-release
 branches:
   except:
