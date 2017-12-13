@@ -1,10 +1,15 @@
 import { name } from '../../package.json'
 import createImport from './createImport'
+import isPolyfillPath from './isPolyfillPath'
 
 export default function createPrototypeMethodTransform(polyfill) {
   const property = polyfill.split('.').pop()
   return {
-    CallExpression(path, { file, opts: _opts }, { types: t }) {
+    CallExpression(path, { file }, { types: t }) {
+      const { filename } = file.opts
+      if (isPolyfillPath(filename)) {
+        return
+      }
       if (
         !t.isMemberExpression(path.node.callee) ||
         !t.isIdentifier(path.node.callee.property) ||
