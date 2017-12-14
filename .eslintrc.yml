@@ -48,8 +48,6 @@ rules:
   better/no-fors: 2
   better/no-whiles: 2
   better/no-switches: 2
-  better/no-typeofs: 2
-  better/no-instanceofs: 2
   better/no-nulls: 2
   better/no-deletes: 1
   better/no-exceptions: 0

@@ -8,10 +8,12 @@ function findRecursive(arr, callback, thisArg = arr, idx = 0) {
   return findRecursive(arr, callback, thisArg, idx + 1)
 }
 
-export default (Function.prototype.isPrototypeOf(Array.prototype.find)
-  ? function find(arr, callback, thisArg) {
-      return arr.find(callback, thisArg)
-    }
-  : function find(arr, callback, thisArg) {
-      return findRecursive(arr, callback, thisArg)
-    })
+export default function find(arr, callback, thisArg) {
+  if (arr.find) {
+    return arr.find(callback, thisArg)
+  }
+  if (Array.isArray(arr)) {
+    return findRecursive(arr, callback, thisArg)
+  }
+  throw new TypeError('.find is not a function')
+}
