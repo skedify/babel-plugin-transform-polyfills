@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Array.prototype.findIndex should not import polyfill more than once 1`] = `
+"
+const list = [1, 2, 3, 4, 5];
+if (list.findIndex(n => n === 3) === 2) {
+  console.log(list.findIndex(3));
+} else {
+  console.log('failure');
+}"
+`;
+
+exports[`Array.prototype.findIndex should replace Array.prototype.findIndex with a polyfill 1`] = `
+"
+const list = [1, 2, 3, 4, 5];
+if (list.findIndex(n => n === 3) === 2) {
+  console.log('success');
+} else {
+  console.log('failure');
+}"
+`;
+
+exports[`Array.prototype.findIndex should work when part of a call chain 1`] = `
+"
+const list = [1, 2, 3, 4, 5];
+if (list.slice(2).findIndex(n => n === 3) === 0) {
+  console.log('success');
+} else {
+  console.log('failure');
+}"
+`;
