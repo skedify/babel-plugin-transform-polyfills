@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-transform-polyfills",
-  "version": "0.0.0-development",
+  "version": "0.0.1-development",
   "description": "Babel plugin to replace occurrences of language features which might not be supported with polyfills",
   "main": "lib/index.js",
   "repository": {
