@@ -1,7 +1,13 @@
 import { resolve, sep } from 'path'
 
-const ROOT = `${resolve(__dirname, '..', '..')}${sep}`
+function normalize(path) {
+  return path.replace(/[/\\]/g, sep)
+}
+
+const ROOT = normalize(
+  `${resolve(__dirname, '..', '..')}${sep}`.replace(/[\\/]/g, '\\')
+)
 
 export default function isPolyfillPath(path) {
-  return path.startsWith(ROOT)
+  return normalize(path).startsWith(ROOT)
 }

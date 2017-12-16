@@ -1,6 +1,6 @@
 module.exports = {
   setupFiles: ['./pretest.js'],
-  moduleDirectories: ['<rootDir>/node_modules'],
+  moduleDirectories: ['node_modules'],
   testMatch: [
     '<rootDir>/src/**/__tests__/**/*.js?(x)',
     '<rootDir>/src/**/?(*.)(spec|test).js?(x)',
