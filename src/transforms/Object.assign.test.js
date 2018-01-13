@@ -6,7 +6,7 @@ describe('Object.assign', () => {
     `
     )
 
-    return expect(result).toMatchSnapshot()
+    expect(result).toMatchSnapshot()
   })
 
   it('should not import polyfill more than once', () => {
@@ -16,7 +16,7 @@ describe('Object.assign', () => {
     `
     )
 
-    return expect(result).toMatchSnapshot()
+    expect(result).toMatchSnapshot()
   })
 
   it('should work when part of a call chain', () => {
@@ -26,6 +26,6 @@ describe('Object.assign', () => {
     `
     )
 
-    return expect(result).toMatchSnapshot()
+    expect(result).toMatchSnapshot()
   })
 })

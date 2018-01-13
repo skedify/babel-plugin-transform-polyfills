@@ -8,7 +8,7 @@ describe('Promise', () => {
     `
     )
 
-    return expect(result).toMatchSnapshot()
+    expect(result).toMatchSnapshot()
   })
 
   it('should not import polyfill more than once', () => {
@@ -22,7 +22,7 @@ describe('Promise', () => {
     `
     )
 
-    return expect(result).toMatchSnapshot()
+    expect(result).toMatchSnapshot()
   })
 
   it('should work when part of a call chain', () => {
@@ -34,7 +34,7 @@ describe('Promise', () => {
     `
     )
 
-    return expect(result).toMatchSnapshot()
+    expect(result).toMatchSnapshot()
   })
 
   it('should not touch other new expressions', () => {
