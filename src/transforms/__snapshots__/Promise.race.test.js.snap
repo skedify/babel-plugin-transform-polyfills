@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Promise.race should not import polyfill more than once 1`] = `
+"import _Promise_race from \\"babel-plugin-transform-polyfills/polyfills/Promise/race\\";
+
+const e = _Promise_race([_Promise_race([1, 2])]);"
+`;
+
+exports[`Promise.race should replace Promise.race with a polyfill 1`] = `
+"import _Promise_race from \\"babel-plugin-transform-polyfills/polyfills/Promise/race\\";
+
+const c = _Promise_race([]);"
+`;
+
+exports[`Promise.race should work when part of a call chain 1`] = `
+"import _Promise_race from \\"babel-plugin-transform-polyfills/polyfills/Promise/race\\";
+
+const c = Object.keys(_Promise_race([]));"
+`;

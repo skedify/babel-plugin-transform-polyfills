@@ -68,5 +68,8 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "es6-promise": "^4.2.2"
   }
 }

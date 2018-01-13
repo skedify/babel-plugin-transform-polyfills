@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Promise should not import polyfill more than once 1`] = `
+"import _create_Promise from \\"babel-plugin-transform-polyfills/polyfills/Promise\\";
+
+const e = _create_Promise(function (resolve, reject) {
+  _create_Promise(function (resolve, reject) {
+    setTimeout(resolve, 1000);
+  }).then(resolve, reject);
+});"
+`;
+
+exports[`Promise should not touch other new expressions 1`] = `
+"import _create_Promise from \\"babel-plugin-transform-polyfills/polyfills/Promise\\";
+
+const c = Object.keys(_create_Promise(function (resolve, reject) {
+  new OtherClass(() => resolve({ a: 1 }));
+}));"
+`;
+
+exports[`Promise should replace new Promise with a polyfill 1`] = `
+"import _create_Promise from \\"babel-plugin-transform-polyfills/polyfills/Promise\\";
+
+const c = _create_Promise(function (resolve, reject) {
+  resolve({ a: 1 });
+});"
+`;
+
+exports[`Promise should work when part of a call chain 1`] = `
+"import _create_Promise from \\"babel-plugin-transform-polyfills/polyfills/Promise\\";
+
+const c = Object.keys(_create_Promise(function (resolve, reject) {
+  resolve({ a: 1 });
+}));"
+`;
