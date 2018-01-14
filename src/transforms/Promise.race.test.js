@@ -1,8 +1,8 @@
-describe('Object.assign', () => {
-  it('should replace Object.assign with a polyfill', () => {
+describe('Promise.race', () => {
+  it('should replace Promise.race with a polyfill', () => {
     const result = compile(
       `
-      const c = Object.assign({a:1}, {b:2})
+      const c = Promise.race([])
     `
     )
 
@@ -12,7 +12,7 @@ describe('Object.assign', () => {
   it('should not import polyfill more than once', () => {
     const result = compile(
       `
-      const e = Object.assign({a:1}, {b:Object.assign({c:3}, {d:4})})
+      const e = Promise.race([Promise.race([1, 2])])
     `
     )
 
@@ -22,7 +22,7 @@ describe('Object.assign', () => {
   it('should work when part of a call chain', () => {
     const result = compile(
       `
-      const c = Object.keys(Object.assign({a:1}, {b:2}))
+      const c = Object.keys(Promise.race([]))
     `
     )
 

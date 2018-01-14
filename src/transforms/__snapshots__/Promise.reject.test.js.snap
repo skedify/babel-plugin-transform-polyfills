@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Promise.reject should not import polyfill more than once 1`] = `
+"import _Promise_reject from \\"babel-plugin-transform-polyfills/polyfills/Promise/reject\\";
+
+const e = _Promise_reject(_Promise_reject([1, 2]));"
+`;
+
+exports[`Promise.reject should replace Promise.reject with a polyfill 1`] = `
+"import _Promise_reject from \\"babel-plugin-transform-polyfills/polyfills/Promise/reject\\";
+
+const c = _Promise_reject();"
+`;
+
+exports[`Promise.reject should work when part of a call chain 1`] = `
+"import _Promise_reject from \\"babel-plugin-transform-polyfills/polyfills/Promise/reject\\";
+
+const c = Object.keys(_Promise_reject());"
+`;
