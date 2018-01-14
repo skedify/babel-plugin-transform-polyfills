@@ -17,7 +17,7 @@ describe(name, () => {
     `
     )
 
-    return expect(result).toMatchSnapshot()
+    expect(result).toMatchSnapshot()
   })
 
   it('should not try to transform the polyfills themselves', () => {
@@ -25,6 +25,6 @@ describe(name, () => {
       resolve(__dirname, '..', 'polyfills', 'Array', 'prototype', 'find.js'),
       { ast: false, babelrc: false, plugins: [plugin] }
     ).code
-    return expect(result).toMatchSnapshot()
+    expect(result).toMatchSnapshot()
   })
 })

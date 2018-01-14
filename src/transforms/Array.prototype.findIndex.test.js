@@ -11,7 +11,7 @@ describe('Array.prototype.findIndex', () => {
     `
     )
 
-    return expect(result).toMatchSnapshot()
+    expect(result).toMatchSnapshot()
   })
 
   it('should not import polyfill more than once', () => {
@@ -26,7 +26,7 @@ describe('Array.prototype.findIndex', () => {
     `
     )
 
-    return expect(result).toMatchSnapshot()
+    expect(result).toMatchSnapshot()
   })
 
   it('should work when part of a call chain', () => {
@@ -41,6 +41,6 @@ describe('Array.prototype.findIndex', () => {
     `
     )
 
-    return expect(result).toMatchSnapshot()
+    expect(result).toMatchSnapshot()
   })
 })
