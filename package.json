@@ -21,6 +21,25 @@
     "lib",
     "polyfills"
   ],
+  "scripts": {
+    "prebuild": "rimraf lib",
+    "build": "babel src -d lib",
+    "test": "cross-env NODE_ENV=test jest",
+    "tdd": "npm run test -- --watch",
+    "lint": "eslint --ext .js src",
+    "format": "npm run lint -- --fix",
+    "check-coverage": "cross-env CI=true NODE_ENV=test jest --coverage",
+    "publish-coverage": "codecov",
+    "precommit": "npm run lint",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "prepush": "npm test && npm run check-coverage",
+    "prepublish": "npm run build",
+    "postmerge": "npm install",
+    "postrewrite": "npm install",
+    "semantic-release": "semantic-release",
+    "commit": "git-cz",
+    "travis-deploy-once": "travis-deploy-once"
+  },
   "devDependencies": {
     "@commitlint/cli": "^6.0.2",
     "@commitlint/config-conventional": "^6.0.2",
@@ -38,28 +57,11 @@
     "eslint-plugin-prettier": "^2.4.0",
     "eslint-plugin-require-in-package": "^1.0.3",
     "husky": "^0.14.3",
-    "jest": "^22.0.6",
+    "jest": "^22.1.0",
     "prettier": "^1.10.2",
     "rimraf": "^2.6.2",
-    "semantic-release": "^8.2.3"
-  },
-  "scripts": {
-    "prebuild": "rimraf lib",
-    "build": "babel src -d lib",
-    "test": "cross-env NODE_ENV=test jest",
-    "tdd": "npm run test -- --watch",
-    "lint": "eslint --ext .js src",
-    "format": "npm run lint -- --fix",
-    "check-coverage": "cross-env CI=true NODE_ENV=test jest --coverage",
-    "publish-coverage": "codecov",
-    "precommit": "npm run lint",
-    "commitmsg": "commitlint -e $GIT_PARAMS",
-    "prepush": "npm test && npm run check-coverage",
-    "prepublish": "npm run build",
-    "postmerge": "npm install",
-    "postrewrite": "npm install",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "commit": "git-cz"
+    "semantic-release": "^12.2.2",
+    "travis-deploy-once": "^4.3.1"
   },
   "keywords": [
     "babel-plugin"
