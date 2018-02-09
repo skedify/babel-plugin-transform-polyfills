@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Array.prototype.fill should not import polyfill more than once 1`] = `
+"import _Array_prototype_fill from \\"babel-plugin-transform-polyfills/polyfills/Array/prototype/fill\\";
+
+_Array_prototype_fill(Array(10));
+_Array_prototype_fill(Array(10), 2);"
+`;
+
+exports[`Array.prototype.fill should replace Array.prototype.fill with a polyfill 1`] = `
+"import _Array_prototype_fill from \\"babel-plugin-transform-polyfills/polyfills/Array/prototype/fill\\";
+
+_Array_prototype_fill(Array(10));"
+`;
