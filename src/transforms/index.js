@@ -2,6 +2,7 @@
 import transformArray_prototype_find from './Array.prototype.find'
 import transformArray_prototype_findIndex from './Array.prototype.findIndex'
 import transformArray_prototype_includes from './Array.prototype.includes'
+import transformArray_prototype_fill from './Array.prototype.fill'
 
 // Object
 import transformObject_assign from './Object.assign'
@@ -22,6 +23,7 @@ const transforms = [
   transformArray_prototype_find,
   transformArray_prototype_findIndex,
   transformArray_prototype_includes,
+  transformArray_prototype_fill,
 
   // Object
   transformObject_assign,
