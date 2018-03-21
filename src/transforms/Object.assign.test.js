@@ -28,4 +28,24 @@ describe('Object.assign', () => {
 
     expect(result).toMatchSnapshot()
   })
+
+  it('should work when using apply', () => {
+    const result = compile(
+      `
+      const c = Object.assign.apply(null, [{a:1}, {b:2}])
+    `
+    )
+
+    expect(result).toMatchSnapshot()
+  })
+
+  it('should work when using call', () => {
+    const result = compile(
+      `
+      const c = Object.assign.call(null, {a:1}, {b:2})
+    `
+    )
+
+    expect(result).toMatchSnapshot()
+  })
 })
