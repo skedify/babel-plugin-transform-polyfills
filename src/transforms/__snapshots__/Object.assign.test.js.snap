@@ -17,3 +17,15 @@ exports[`Object.assign should work when part of a call chain 1`] = `
 
 const c = Object.keys(_Object_assign({ a: 1 }, { b: 2 }));"
 `;
+
+exports[`Object.assign should work when using apply 1`] = `
+"import _Object_assign from \\"babel-plugin-transform-polyfills/polyfills/Object/assign\\";
+
+const c = _Object_assign.apply(null, [{ a: 1 }, { b: 2 }]);"
+`;
+
+exports[`Object.assign should work when using call 1`] = `
+"import _Object_assign from \\"babel-plugin-transform-polyfills/polyfills/Object/assign\\";
+
+const c = _Object_assign.call(null, { a: 1 }, { b: 2 });"
+`;
