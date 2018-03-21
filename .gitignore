@@ -6,6 +6,7 @@
 !.eslintignore
 !.prettierignore
 !.babelrc
+!.releaserc
 !.travis.yml
 
 # dependencies
