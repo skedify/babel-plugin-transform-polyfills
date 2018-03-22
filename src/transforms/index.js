@@ -4,6 +4,9 @@ import transformArray_prototype_findIndex from './Array.prototype.findIndex'
 import transformArray_prototype_includes from './Array.prototype.includes'
 import transformArray_prototype_fill from './Array.prototype.fill'
 
+// Math
+import transformMath_sign from './Math.sign'
+
 // Object
 import transformObject_assign from './Object.assign'
 
@@ -24,6 +27,9 @@ const transforms = [
   transformArray_prototype_findIndex,
   transformArray_prototype_includes,
   transformArray_prototype_fill,
+
+  // Math
+  transformMath_sign,
 
   // Object
   transformObject_assign,
