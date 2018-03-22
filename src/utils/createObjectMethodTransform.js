@@ -14,51 +14,57 @@ export default function createObjectMethodTransform(polyfill) {
   const [object, property] = polyfill.split('.')
 
   return {
-    CallExpression(path, { file }, { types: t }) {
+    MemberExpression(path, { file }, { types: t }) {
       const { filename } = file.opts
+
+      // Skip when already polyfilled
       if (isPolyfillPath(filename)) {
         return
       }
 
-      // Special cases: apply & call
-      if (
-        t.isMemberExpression(path.node.callee) &&
-        t.isMemberExpression(path.node.callee.object) &&
-        t.isIdentifier(path.node.callee.property) &&
-        ['apply', 'call'].includes(path.node.callee.property.name) &&
-        path.node.callee.object.object.name === object &&
-        path.node.callee.object.property.name === property
-      ) {
-        path.replaceWith(
-          t.callExpression(
-            t.memberExpression(
-              createImportIdentifier(file, polyfill),
-              path.node.callee.property
-            ),
-            path.node.arguments
-          )
-        )
+      // Guard against invalid types
+      if (t.isIdentifier(path.node)) {
         return
       }
 
-      // Skip when it is not object.property
+      // Replace with polyfill
+      if (
+        path.node.object.name === object &&
+        path.node.property.name === property
+      ) {
+        path.replaceWith(createImportIdentifier(file, polyfill))
+      }
+    },
+
+    CallExpression(path, { file }, { types: t }) {
+      const { filename } = file.opts
+
+      // Skip when already polyfilled
+      if (isPolyfillPath(filename)) {
+        return
+      }
+
+      // Guard against invalid types
       if (
         !t.isMemberExpression(path.node.callee) ||
         !t.isIdentifier(path.node.callee.object) ||
-        !t.isIdentifier(path.node.callee.property) ||
-        path.node.callee.object.name !== object ||
-        path.node.callee.property.name !== property
+        !t.isIdentifier(path.node.callee.property)
       ) {
         return
       }
 
-      // Happy case, replace with polyfill + import
-      path.replaceWith(
-        t.callExpression(
-          createImportIdentifier(file, polyfill),
-          path.node.arguments
+      // Replace with polyfill
+      if (
+        path.node.callee.object.name === object &&
+        path.node.callee.property.name === property
+      ) {
+        path.replaceWith(
+          t.callExpression(
+            createImportIdentifier(file, polyfill),
+            path.node.arguments
+          )
         )
-      )
+      }
     },
   }
 }
