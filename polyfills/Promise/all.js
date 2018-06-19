@@ -1,5 +1,8 @@
 import PromisePolyfill from 'es6-promise'
+import resolveGlobal from '../resolveGlobal'
 
-export default (Function.prototype.isPrototypeOf(window.Promise)
-  ? window.Promise.all.bind(window.Promise)
+const g = resolveGlobal()
+
+export default (Function.prototype.isPrototypeOf(g.Promise)
+  ? g.Promise.all.bind(g.Promise)
   : PromisePolyfill.all.bind(PromisePolyfill))
