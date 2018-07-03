@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`String.fromCodePoint should not import polyfill more than once 1`] = `
+"import _String_fromCodePoint from \\"babel-plugin-transform-polyfills/polyfills/String/fromCodePoint\\";
+
+const e = _String_fromCodePoint(1);
+const b = _String_fromCodePoint(2);"
+`;
+
+exports[`String.fromCodePoint should replace String.fromCodePoint with a polyfill 1`] = `
+"import _String_fromCodePoint from \\"babel-plugin-transform-polyfills/polyfills/String/fromCodePoint\\";
+
+const c = _String_fromCodePoint(1, 2);"
+`;
+
+exports[`String.fromCodePoint should work when part of a call chain 1`] = `
+"import _String_fromCodePoint from \\"babel-plugin-transform-polyfills/polyfills/String/fromCodePoint\\";
+
+const c = Object.keys(_String_fromCodePoint(1, 2));"
+`;
+
+exports[`String.fromCodePoint should work when using apply 1`] = `
+"import _String_fromCodePoint from \\"babel-plugin-transform-polyfills/polyfills/String/fromCodePoint\\";
+
+const c = _String_fromCodePoint.apply(null, [1, 2, 3]);"
+`;
+
+exports[`String.fromCodePoint should work when using call 1`] = `
+"import _String_fromCodePoint from \\"babel-plugin-transform-polyfills/polyfills/String/fromCodePoint\\";
+
+const c = _String_fromCodePoint.call(null, 1, 2);"
+`;
