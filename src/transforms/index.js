@@ -20,6 +20,7 @@ import transformPromise from './Promise'
 // String
 import transformString_prototype_padStart from './String.prototype.padStart'
 import transformString_prototype_startsWith from './String.prototype.startsWith'
+import transformString_fromCodePoint from './String.fromCodePoint'
 
 const transforms = [
   // Array
@@ -44,6 +45,7 @@ const transforms = [
   // String
   transformString_prototype_padStart,
   transformString_prototype_startsWith,
+  transformString_fromCodePoint,
 ]
 
 export default transforms
