@@ -4,6 +4,7 @@ exports[`Array.prototype.fill should not import polyfill more than once 1`] = `
 "import _Array_prototype_fill from \\"babel-plugin-transform-polyfills/polyfills/Array/prototype/fill\\";
 
 _Array_prototype_fill(Array(10));
+
 _Array_prototype_fill(Array(10), 2);"
 `;
 

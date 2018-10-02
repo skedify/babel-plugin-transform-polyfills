@@ -1,4 +1,4 @@
-import { types as t } from 'babel-core'
+import { types as t } from '@babel/core'
 
 export default function createImport(file, name, path) {
   const imported = file.path.node.body.find(
@@ -13,11 +13,13 @@ export default function createImport(file, name, path) {
   }
 
   const identifier = file.scope.generateUidIdentifier(name)
+
   file.path.node.body.unshift(
     t.importDeclaration(
       [t.importDefaultSpecifier(identifier)],
       t.stringLiteral(path)
     )
   )
+
   return identifier
 }

@@ -1,11 +1,8 @@
 module.exports = {
   setupFiles: ['./pretest.js'],
   moduleDirectories: ['node_modules'],
-  testMatch: [
-    '<rootDir>/src/**/__tests__/**/*.js?(x)',
-    '<rootDir>/src/**/?(*.)(spec|test).js?(x)',
-  ],
-  testPathIgnorePatterns: ['<rootDir>/node_modules/'],
+  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/lib/'],
   collectCoverageFrom: ['src/**/*.js'],
   testEnvironment: 'node',
   coverageDirectory: './coverage/',
