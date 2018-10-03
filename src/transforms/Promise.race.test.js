@@ -1,3 +1,5 @@
+import compile from '../../test/utils/compile'
+
 describe('Promise.race', () => {
   it('should replace Promise.race with a polyfill', () => {
     const result = compile(

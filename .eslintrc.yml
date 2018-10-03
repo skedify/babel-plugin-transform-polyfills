@@ -17,7 +17,6 @@ parserOptions:
 globals:
   PACKAGE: yes
   VERSION: yes
-  compile: yes
 plugins:
   - better
   - filenames

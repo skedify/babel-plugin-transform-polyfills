@@ -1,12 +1,13 @@
 import { transform } from '@babel/core'
 
-import plugin from './src'
+import plugin from '../../src'
 
-global.compile = code =>
-  transform(code, {
+export default function compile(code) {
+  return transform(code, {
     cwd: '/',
-    filename: 'TEST',
+    filename: 'TESTING',
     ast: false,
     babelrc: false,
     plugins: [plugin],
   }).code
+}

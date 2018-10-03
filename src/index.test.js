@@ -2,6 +2,8 @@ import { name } from '../package.json'
 import { resolve } from 'path'
 import { transformFileSync } from '@babel/core'
 
+import compile from '../test/utils/compile'
+
 import plugin from '.'
 
 describe(name, () => {
