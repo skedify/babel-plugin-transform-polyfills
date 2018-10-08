@@ -1,12 +1,14 @@
 language: node_js
 cache:
   directories:
-    - ~/.npm
+    - $HOME/.npm
 notifications:
   email: false
 node_js:
   - '10'
-  - '9'
+before_script:
+  - npm run build
+  - npm audit --only=prod --audit-level=critical
 after_success:
   - npm run publish-coverage
   - npm run travis-deploy-once "npm run semantic-release"
