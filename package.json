@@ -21,8 +21,15 @@
     "lib",
     "polyfills"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-push": "npm run check-coverage"
+    }
+  },
   "scripts": {
-    "prebuild": "rimraf lib",
+    "prebuild": "npm run lint && rimraf lib",
     "build": "babel src -d lib",
     "test": "cross-env NODE_ENV=test jest",
     "tdd": "npm run test -- --watch",
@@ -30,25 +37,19 @@
     "format": "npm run lint -- --fix",
     "check-coverage": "cross-env CI=true NODE_ENV=test jest --coverage",
     "publish-coverage": "codecov",
-    "precommit": "npm run lint",
-    "commitmsg": "commitlint -e $GIT_PARAMS",
-    "prepush": "npm test && npm run check-coverage",
-    "prepublish": "npm run build",
-    "postmerge": "npm install",
-    "postrewrite": "npm install",
-    "semantic-release": "semantic-release",
     "commit": "git-cz",
+    "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once"
   },
   "devDependencies": {
-    "@commitlint/cli": "^7.0.0",
-    "@commitlint/config-conventional": "^7.0.1",
+    "@commitlint/cli": "^7.2.0",
+    "@commitlint/config-conventional": "^7.1.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-preset-env": "^1.7.0",
-    "codecov": "^3.0.2",
-    "commitizen": "^2.10.1",
+    "codecov": "^3.1.0",
+    "commitizen": "^3.0.2",
     "cross-env": "^5.2.0",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.19.1",
@@ -56,12 +57,12 @@
     "eslint-plugin-filenames": "^1.3.2",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-require-in-package": "^1.0.3",
-    "husky": "^0.14.3",
+    "husky": "^1.1.1",
     "jest": "^23.1.0",
     "prettier": "^1.13.5",
     "rimraf": "^2.6.2",
-    "semantic-release": "^15.5.4",
-    "travis-deploy-once": "^5.0.0"
+    "semantic-release": "^15.9.17",
+    "travis-deploy-once": "^5.0.9"
   },
   "keywords": [
     "babel-plugin"
@@ -72,6 +73,6 @@
     }
   },
   "dependencies": {
-    "es6-promise": "^4.2.4"
+    "es6-promise": "^4.2.5"
   }
 }
