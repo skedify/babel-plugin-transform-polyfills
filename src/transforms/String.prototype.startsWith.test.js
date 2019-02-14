@@ -1,3 +1,5 @@
+import compile from '../../test/utils/compile'
+
 describe('String.prototype.startsWith', () => {
   it('should replace String.prototype.startsWith with a polyfill', () => {
     const result = compile(

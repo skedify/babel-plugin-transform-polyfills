@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Array.prototype.find should not import polyfill more than once 1`] = `
-"import _Array_prototype_find from 'babel-plugin-transform-polyfills/polyfills/Array/prototype/find';
-
+"import _Array_prototype_find from \\"babel-plugin-transform-polyfills/polyfills/Array/prototype/find\\";
 const list = [1, 2, 3, 4, 5];
+
 if (_Array_prototype_find(list, n => n === 3) !== undefined) {
   console.log(_Array_prototype_find(list, 3));
 } else {
@@ -12,9 +12,9 @@ if (_Array_prototype_find(list, n => n === 3) !== undefined) {
 `;
 
 exports[`Array.prototype.find should replace Array.prototype.find with a polyfill 1`] = `
-"import _Array_prototype_find from 'babel-plugin-transform-polyfills/polyfills/Array/prototype/find';
-
+"import _Array_prototype_find from \\"babel-plugin-transform-polyfills/polyfills/Array/prototype/find\\";
 const list = [1, 2, 3, 4, 5];
+
 if (_Array_prototype_find(list, n => n === 3) !== undefined) {
   console.log('success');
 } else {
@@ -23,9 +23,9 @@ if (_Array_prototype_find(list, n => n === 3) !== undefined) {
 `;
 
 exports[`Array.prototype.find should work when part of a call chain 1`] = `
-"import _Array_prototype_find from 'babel-plugin-transform-polyfills/polyfills/Array/prototype/find';
-
+"import _Array_prototype_find from \\"babel-plugin-transform-polyfills/polyfills/Array/prototype/find\\";
 const list = [1, 2, 3, 4, 5];
+
 if (_Array_prototype_find(list.slice(2), n => n === 3) !== undefined) {
   console.log('success');
 } else {

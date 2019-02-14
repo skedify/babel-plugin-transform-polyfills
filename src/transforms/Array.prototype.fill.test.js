@@ -1,3 +1,5 @@
+import compile from '../../test/utils/compile'
+
 describe('Array.prototype.fill', () => {
   it('should replace Array.prototype.fill with a polyfill', () => {
     const result = compile(

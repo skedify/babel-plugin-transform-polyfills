@@ -1,3 +1,5 @@
+import compile from '../../test/utils/compile'
+
 describe('String.fromCodePoint', () => {
   it('should replace String.fromCodePoint with a polyfill', () => {
     const result = compile(

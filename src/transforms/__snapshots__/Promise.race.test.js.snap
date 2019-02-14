@@ -14,6 +14,5 @@ const c = _Promise_race([]);"
 
 exports[`Promise.race should work when part of a call chain 1`] = `
 "import _Promise_race from \\"babel-plugin-transform-polyfills/polyfills/Promise/race\\";
-
 const c = Object.keys(_Promise_race([]));"
 `;

@@ -1,3 +1,5 @@
+import compile from '../../test/utils/compile'
+
 describe('Object.assign', () => {
   it('should replace Object.assign with a polyfill', () => {
     const result = compile(

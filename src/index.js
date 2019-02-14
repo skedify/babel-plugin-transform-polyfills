@@ -18,11 +18,13 @@ function makeCompoundVisitor(babel) {
 
 export default function polyfills(babel) {
   const visitor = {}
+
   transforms.forEach(transform => {
     Object.keys(transform).forEach(name => {
       if (visitor[name] === undefined) {
         visitor[name] = makeCompoundVisitor(babel)
       }
+
       visitor[name].add(transform[name])
     })
   })

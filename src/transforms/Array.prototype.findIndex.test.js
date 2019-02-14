@@ -1,3 +1,5 @@
+import compile from '../../test/utils/compile'
+
 describe('Array.prototype.findIndex', () => {
   it('should replace Array.prototype.findIndex with a polyfill', () => {
     const result = compile(

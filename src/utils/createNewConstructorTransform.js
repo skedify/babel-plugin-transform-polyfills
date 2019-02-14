@@ -6,6 +6,7 @@ export default function createNewConstructorTransform(className) {
   return {
     NewExpression(path, { file }, { types: t }) {
       const { filename } = file.opts
+
       if (isPolyfillPath(filename)) {
         return
       }

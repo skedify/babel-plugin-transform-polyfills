@@ -1,31 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`babel-plugin-transform-polyfills should not try to transform the polyfills themselves 1`] = `
-"function findRecursive(arr, callback, thisArg = arr, idx = 0) {
+"\\"use strict\\";
+
+Object.defineProperty(exports, \\"__esModule\\", {
+  value: true
+});
+exports.default = find;
+
+function findRecursive(arr, callback, thisArg = arr, idx = 0) {
   if (idx === arr.length) {
     return undefined;
   }
+
   if (callback.call(thisArg, arr[idx], idx, arr)) {
     return arr[idx];
   }
+
   return findRecursive(arr, callback, thisArg, idx + 1);
 }
 
-export default function find(arr, callback, thisArg) {
+function find(arr, callback, thisArg) {
   if (arr.find) {
     return arr.find(callback, thisArg);
   }
+
   if (Array.isArray(arr)) {
     return findRecursive(arr, callback, thisArg);
   }
+
   throw new TypeError('.find is not a function');
 }"
 `;
 
 exports[`babel-plugin-transform-polyfills should replace String.prototype.padStart with a polyfill 1`] = `
-"import _String_prototype_padStart from 'babel-plugin-transform-polyfills/polyfills/String/prototype/padStart';
-
+"import _String_prototype_padStart from \\"babel-plugin-transform-polyfills/polyfills/String/prototype/padStart\\";
 const text = 'this is a string';
+
 if (_String_prototype_padStart(text, 'a')) {
   console.log('success');
 } else {

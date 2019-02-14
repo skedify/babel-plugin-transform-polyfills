@@ -1,3 +1,5 @@
+import compile from '../../test/utils/compile'
+
 describe('String.prototype.padStart', () => {
   it('should replace String.prototype.padStart with a polyfill', () => {
     const result = compile(
