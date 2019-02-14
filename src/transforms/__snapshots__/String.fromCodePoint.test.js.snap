@@ -4,6 +4,7 @@ exports[`String.fromCodePoint should not import polyfill more than once 1`] = `
 "import _String_fromCodePoint from \\"babel-plugin-transform-polyfills/polyfills/String/fromCodePoint\\";
 
 const e = _String_fromCodePoint(1);
+
 const b = _String_fromCodePoint(2);"
 `;
 
@@ -15,7 +16,6 @@ const c = _String_fromCodePoint(1, 2);"
 
 exports[`String.fromCodePoint should work when part of a call chain 1`] = `
 "import _String_fromCodePoint from \\"babel-plugin-transform-polyfills/polyfills/String/fromCodePoint\\";
-
 const c = Object.keys(_String_fromCodePoint(1, 2));"
 `;
 

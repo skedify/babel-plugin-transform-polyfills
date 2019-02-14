@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`String.prototype.startsWith should not import polyfill more than once 1`] = `
-"import _String_prototype_startsWith from 'babel-plugin-transform-polyfills/polyfills/String/prototype/startsWith';
-
+"import _String_prototype_startsWith from \\"babel-plugin-transform-polyfills/polyfills/String/prototype/startsWith\\";
 const text = 'this is a string';
+
 if (_String_prototype_startsWith(text, 'a')) {
   console.log(_String_prototype_startsWith(text, 'a'));
 } else {
@@ -12,9 +12,9 @@ if (_String_prototype_startsWith(text, 'a')) {
 `;
 
 exports[`String.prototype.startsWith should replace String.prototype.startsWith with a polyfill 1`] = `
-"import _String_prototype_startsWith from 'babel-plugin-transform-polyfills/polyfills/String/prototype/startsWith';
-
+"import _String_prototype_startsWith from \\"babel-plugin-transform-polyfills/polyfills/String/prototype/startsWith\\";
 const text = 'this is a string';
+
 if (_String_prototype_startsWith(text, 'a') === true) {
   console.log('success');
 } else {
@@ -23,9 +23,9 @@ if (_String_prototype_startsWith(text, 'a') === true) {
 `;
 
 exports[`String.prototype.startsWith should work when part of a call chain 1`] = `
-"import _String_prototype_startsWith from 'babel-plugin-transform-polyfills/polyfills/String/prototype/startsWith';
-
+"import _String_prototype_startsWith from \\"babel-plugin-transform-polyfills/polyfills/String/prototype/startsWith\\";
 const text = 'this is a string';
+
 if (_String_prototype_startsWith(text.substr(5), 'a')) {
   console.log('success');
 } else {

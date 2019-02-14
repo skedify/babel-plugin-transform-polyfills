@@ -12,9 +12,10 @@ const e = _create_Promise(function (resolve, reject) {
 
 exports[`Promise should not touch other new expressions 1`] = `
 "import _create_Promise from \\"babel-plugin-transform-polyfills/polyfills/Promise\\";
-
 const c = Object.keys(_create_Promise(function (resolve, reject) {
-  new OtherClass(() => resolve({ a: 1 }));
+  new OtherClass(() => resolve({
+    a: 1
+  }));
 }));"
 `;
 
@@ -22,14 +23,17 @@ exports[`Promise should replace new Promise with a polyfill 1`] = `
 "import _create_Promise from \\"babel-plugin-transform-polyfills/polyfills/Promise\\";
 
 const c = _create_Promise(function (resolve, reject) {
-  resolve({ a: 1 });
+  resolve({
+    a: 1
+  });
 });"
 `;
 
 exports[`Promise should work when part of a call chain 1`] = `
 "import _create_Promise from \\"babel-plugin-transform-polyfills/polyfills/Promise\\";
-
 const c = Object.keys(_create_Promise(function (resolve, reject) {
-  resolve({ a: 1 });
+  resolve({
+    a: 1
+  });
 }));"
 `;

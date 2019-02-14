@@ -1,3 +1,5 @@
+import compile from '../../test/utils/compile'
+
 describe('Math.sign', () => {
   it('should replace Math.sign with a polyfill', () => {
     const result = compile(

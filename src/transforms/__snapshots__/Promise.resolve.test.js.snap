@@ -14,6 +14,5 @@ const c = _Promise_resolve();"
 
 exports[`Promise.resolve should work when part of a call chain 1`] = `
 "import _Promise_resolve from \\"babel-plugin-transform-polyfills/polyfills/Promise/resolve\\";
-
 const c = Object.keys(_Promise_resolve());"
 `;

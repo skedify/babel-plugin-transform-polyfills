@@ -1,3 +1,5 @@
+import compile from '../../test/utils/compile'
+
 describe('Promise.all', () => {
   it('should replace Promise.all with a polyfill', () => {
     const result = compile(

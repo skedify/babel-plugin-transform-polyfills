@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Math.sign should not import polyfill more than once 1`] = `
-"import _Math_sign from 'babel-plugin-transform-polyfills/polyfills/Math/sign';
-
+"import _Math_sign from \\"babel-plugin-transform-polyfills/polyfills/Math/sign\\";
 const numbers = [-5, 5];
+
 if (_Math_sign(numbers[0]) === -1 && _Math_sign(numbers[1]) === 1) {
   console.log('success');
 } else {
@@ -12,9 +12,9 @@ if (_Math_sign(numbers[0]) === -1 && _Math_sign(numbers[1]) === 1) {
 `;
 
 exports[`Math.sign should replace Math.sign with a polyfill 1`] = `
-"import _Math_sign from 'babel-plugin-transform-polyfills/polyfills/Math/sign';
-
+"import _Math_sign from \\"babel-plugin-transform-polyfills/polyfills/Math/sign\\";
 const number = 5;
+
 if (_Math_sign(number) === 1) {
   console.log('success');
 } else {
@@ -23,9 +23,9 @@ if (_Math_sign(number) === 1) {
 `;
 
 exports[`Math.sign should work when part of a call chain 1`] = `
-"import _Math_sign from 'babel-plugin-transform-polyfills/polyfills/Math/sign';
-
+"import _Math_sign from \\"babel-plugin-transform-polyfills/polyfills/Math/sign\\";
 const signedNumbers = [-5, 5].map(_Math_sign);
+
 if (signedNumbers[0] === -1 && signedNumbers[1] === 1) {
   console.log('success');
 } else {
@@ -34,9 +34,9 @@ if (signedNumbers[0] === -1 && signedNumbers[1] === 1) {
 `;
 
 exports[`Math.sign should work when part of a call chain when Math.sign is not the first parameter 1`] = `
-"import _Math_sign from 'babel-plugin-transform-polyfills/polyfills/Math/sign';
-
+"import _Math_sign from \\"babel-plugin-transform-polyfills/polyfills/Math/sign\\";
 const signedNumber = [5].reduce(all => all, _Math_sign(5));
+
 if (signedNumber === 1) {
   console.log('success');
 } else {
@@ -45,13 +45,14 @@ if (signedNumber === 1) {
 `;
 
 exports[`Math.sign should work when part of a call chain when Math.sign is not the first parameter and passed as a callback 1`] = `
-"import _Math_sign from 'babel-plugin-transform-polyfills/polyfills/Math/sign';
+"import _Math_sign from \\"babel-plugin-transform-polyfills/polyfills/Math/sign\\";
 
 Array.prototype.reverseMap = function (thisValue, callback) {
   return this.map(callback, thisValue);
 };
 
 const signedNumbers = [-5, 5].reverseMap(null, _Math_sign);
+
 if (signedNumbers[0] === -1 && signedNumbers[1] === 1) {
   console.log('success');
 } else {
@@ -60,9 +61,9 @@ if (signedNumbers[0] === -1 && signedNumbers[1] === 1) {
 `;
 
 exports[`Math.sign should work when part of a call chain with extra parameters 1`] = `
-"import _Math_sign from 'babel-plugin-transform-polyfills/polyfills/Math/sign';
-
+"import _Math_sign from \\"babel-plugin-transform-polyfills/polyfills/Math/sign\\";
 const signedNumbers = [-5, 5].map(_Math_sign, null);
+
 if (signedNumbers[0] === -1 && signedNumbers[1] === 1) {
   console.log('success');
 } else {

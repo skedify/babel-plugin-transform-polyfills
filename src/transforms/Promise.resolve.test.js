@@ -1,3 +1,5 @@
+import compile from '../../test/utils/compile'
+
 describe('Promise.resolve', () => {
   it('should replace Promise.resolve with a polyfill', () => {
     const result = compile(

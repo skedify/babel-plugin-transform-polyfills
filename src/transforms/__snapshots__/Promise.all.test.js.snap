@@ -14,6 +14,5 @@ const c = _Promise_all([]);"
 
 exports[`Promise.all should work when part of a call chain 1`] = `
 "import _Promise_all from \\"babel-plugin-transform-polyfills/polyfills/Promise/all\\";
-
 const c = Object.keys(_Promise_all([]));"
 `;

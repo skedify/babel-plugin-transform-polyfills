@@ -1,3 +1,5 @@
+import compile from '../../test/utils/compile'
+
 describe('Promise.reject', () => {
   it('should replace Promise.reject with a polyfill', () => {
     const result = compile(

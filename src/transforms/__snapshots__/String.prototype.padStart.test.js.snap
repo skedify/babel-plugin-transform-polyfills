@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`String.prototype.padStart should not import polyfill more than once 1`] = `
-"import _String_prototype_padStart from 'babel-plugin-transform-polyfills/polyfills/String/prototype/padStart';
-
+"import _String_prototype_padStart from \\"babel-plugin-transform-polyfills/polyfills/String/prototype/padStart\\";
 const text = 'this is a string';
+
 if (_String_prototype_padStart(text, 'a')) {
   console.log(_String_prototype_padStart(text, 'a'));
 } else {
@@ -12,9 +12,9 @@ if (_String_prototype_padStart(text, 'a')) {
 `;
 
 exports[`String.prototype.padStart should replace String.prototype.padStart with a polyfill 1`] = `
-"import _String_prototype_padStart from 'babel-plugin-transform-polyfills/polyfills/String/prototype/padStart';
-
+"import _String_prototype_padStart from \\"babel-plugin-transform-polyfills/polyfills/String/prototype/padStart\\";
 const text = 'this is a string';
+
 if (_String_prototype_padStart(text, 'a') === true) {
   console.log('success');
 } else {
@@ -23,9 +23,9 @@ if (_String_prototype_padStart(text, 'a') === true) {
 `;
 
 exports[`String.prototype.padStart should work when part of a call chain 1`] = `
-"import _String_prototype_padStart from 'babel-plugin-transform-polyfills/polyfills/String/prototype/padStart';
-
+"import _String_prototype_padStart from \\"babel-plugin-transform-polyfills/polyfills/String/prototype/padStart\\";
 const text = 'this is a string';
+
 if (_String_prototype_padStart(text.substr(5), 'a')) {
   console.log('success');
 } else {
