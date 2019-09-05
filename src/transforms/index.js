@@ -9,6 +9,7 @@ import transformMath_sign from './Math.sign'
 
 // Object
 import transformObject_assign from './Object.assign'
+import transformObject_entries from './Object.entries'
 
 // Promise
 import transformPromise_all from './Promise.all'
@@ -34,6 +35,7 @@ const transforms = [
 
   // Object
   transformObject_assign,
+  transformObject_entries,
 
   // Promise
   transformPromise_all,
