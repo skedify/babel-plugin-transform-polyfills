@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Object.values should not import polyfill more than once 1`] = `
+"import _Object_values from \\"babel-plugin-transform-polyfills/polyfills/Object/values\\";
+
+const e = _Object_values({
+  a: 1,
+  b: 2
+});
+
+const f = _Object_values({
+  a: 1,
+  b: 2
+});"
+`;
+
+exports[`Object.values should replace Object.values with a polyfill 1`] = `
+"import _Object_values from \\"babel-plugin-transform-polyfills/polyfills/Object/values\\";
+
+const c = _Object_values({
+  a: 1,
+  b: 2
+});"
+`;
+
+exports[`Object.values should work when part of a call chain 1`] = `
+"import _Object_values from \\"babel-plugin-transform-polyfills/polyfills/Object/values\\";
+const c = Object.keys(_Object_values({
+  a: 1,
+  b: 2
+}));"
+`;
+
+exports[`Object.values should work when using apply 1`] = `
+"import _Object_values from \\"babel-plugin-transform-polyfills/polyfills/Object/values\\";
+
+const c = _Object_values.apply(null, [{
+  a: 1,
+  b: 2
+}]);"
+`;
+
+exports[`Object.values should work when using call 1`] = `
+"import _Object_values from \\"babel-plugin-transform-polyfills/polyfills/Object/values\\";
+
+const c = _Object_values.call(null, {
+  a: 1,
+  b: 2
+});"
+`;
